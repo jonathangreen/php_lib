@@ -1,8 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  */
 module_load_include('inc', 'php_lib', 'Members');
 
@@ -30,7 +29,7 @@ class LazyMember {
    */
   protected $value;
   /**
-   * Has the value
+   * Has the value.
    *
    * @var boolean
    */
@@ -62,7 +61,7 @@ class LazyMember {
 }
 
 /**
- *  Lazy Members.
+ * Lazy Members.
  */
 class LazyMembers extends Members {
 
@@ -86,6 +85,7 @@ class LazyMembers extends Members {
    * Checks to see if a member is lazy.
    *
    * @param string $name
+   *
    * @return boolean
    */
   public function isLazy($name) {
@@ -109,6 +109,7 @@ class LazyMembers extends Members {
    * Return NULL if the member doesn't exist or isn't set.
    *
    * @param string $name
+   *
    * @return mixed
    */
   public function __get($name) {
@@ -136,3 +137,4 @@ class LazyMembers extends Members {
   }
 
 }
+// @codingStandardsIgnoreEnd

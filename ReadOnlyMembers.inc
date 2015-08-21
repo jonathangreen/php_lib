@@ -1,8 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  */
 module_load_include('inc', 'php_lib', 'ReadOnlyPrivateMembers');
 module_load_include('inc', 'php_lib', 'ReadOnlyProtectedMembers');
@@ -36,7 +35,8 @@ class ReadOnlyMembers {
     $properties = array(
       'owner_class' => $owner_class,
       'depth' => $depth,
-    ); // Account for this class in the depth.
+    );
+    // Account for this class in the depth.
     $this->private = new ReadOnlyPrivateMembers($private, $properties);
     $this->protected = new ReadOnlyProtectedMembers($owner_class, $properties);
   }
@@ -107,3 +107,4 @@ class ReadOnlyMembers {
   }
 
 }
+// @codingStandardsIgnoreEnd

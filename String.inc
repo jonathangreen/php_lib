@@ -1,8 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  */
 
 /**
@@ -12,7 +11,7 @@
  *   The string to check.
  * @param array $matches
  *   The matches to compare the string with, if none are provided 'true' and 'false' will be used.
- * @param boolean $case_sensitive
+ * @param bool $case_sensitiveDo a case sensitive compare? Defaults to false.
  *   Do a case sensitive compare? Defaults to false.
  *
  * @return boolean
@@ -37,7 +36,7 @@ function is_boolean_string($string, array $matches = NULL, $case_sensitive = FAL
  * @param array $matches
  *   The matches to compare the string with, where the key is used to compare and the value is the boolean
  *   value it repersents. If none are provided 'true' and 'false' will be used.
- * @param boolean $case_sensitive
+ * @param bool $case_sensitiveDo a case sensitive compare? Defaults to false.
  *   Do a case sensitive compare? Defaults to false.
  *
  * @return mixed
@@ -126,3 +125,4 @@ function append_to_new_line($string, $appendage) {
 function is_non_empty_string($string) {
   return is_string($string) && trim($string) != '';
 }
+// @codingStandardsIgnoreEnd

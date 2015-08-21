@@ -1,15 +1,13 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  * Abstracts EAC-CPF xml document into a PHP class where the maintence history is maintained automatically by the class.
- *
  */
 module_load_include('inc', 'islandora_metadata', 'XMLDocument');
 
 /**
- * EACCPFType:
+ * EACCPFType:.
  *
  * SINGLE IDENTITY: one person (or corporate body or family) with a single identity represented in one
  * EAC-CPF instance. (Most common)
@@ -40,7 +38,8 @@ enum('EACCPFType', array(
 enum('EACCPFMaintenceStatusType', array(
   'revised' => 'revised',
   'deleted' => 'deleted',
-  'new' => 'created', // Since the new keyword is prohibited use created to reference new.
+  'new' => 'created',
+// Since the new keyword is prohibited use created to reference new.
   'deletedSplit' => 'deletedSplit',
   'deletedReplaced' => 'deletedReplaced',
   'cancelled' => 'cancelled',
@@ -201,3 +200,4 @@ class EACCPFDocument extends _XMLDocument {
   }
 
 }
+// @codingStandardsIgnoreEnd

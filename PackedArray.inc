@@ -1,12 +1,13 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  * Provides a 'packed' array for occasions when PHP array consumes to much memory. Not that this class
- * is about twice as slow as PHP arrays, but around three times as compressed. It should only be used when dealing with large arrays where 
+ * is about twice as slow as PHP arrays, but around three times as compressed. It should only be used when dealing with large arrays where
  * processing speed isn't as much of a concern as memory usage.
- * 
+ */
+/**
+ *
  */
 class PackedArray implements ArrayAccess, Serializable {
 
@@ -52,3 +53,4 @@ class PackedArray implements ArrayAccess, Serializable {
   }
 
 }
+// @codingStandardsIgnoreEnd

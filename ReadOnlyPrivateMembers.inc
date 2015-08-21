@@ -1,8 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  */
 module_load_include('inc', 'php_lib', 'Backtrace');
 
@@ -86,7 +85,7 @@ class ReadOnlyPrivateMembers {
   }
 
   /**
-   * Removes a member
+   * Removes a member.
    *
    * @param string $name
    */
@@ -126,3 +125,4 @@ class ReadOnlyPrivateMembers {
   }
 
 }
+// @codingStandardsIgnoreEnd

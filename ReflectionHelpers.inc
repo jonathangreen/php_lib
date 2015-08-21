@@ -1,16 +1,15 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  * A collection of functions that help with reflection like properties.
- *
  */
 
 /**
  * Checks to see if the given variable has a class.
  *
  * @param mixed $var
+ *
  * @return boolean
  */
 function has_class($var) {
@@ -71,4 +70,4 @@ function has_interface($obj, $interface) {
   }
   return FALSE;
 }
-
+// @codingStandardsIgnoreEnd
