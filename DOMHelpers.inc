@@ -1,10 +1,10 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  * A collection of functions to help with DOM processing.
  */
+
 module_load_include('inc', 'php_lib', 'String');
 
 /**
@@ -13,6 +13,7 @@ module_load_include('inc', 'php_lib', 'String');
  * The returned xpath will return the given node only.
  *
  * @param DOMNode $node
+ *
  * @return type
  */
 function get_dom_node_xpath(DOMNode $node) {
@@ -28,6 +29,7 @@ function get_dom_node_xpath(DOMNode $node) {
  * Gets a fragment of the xpath for the given node.
  *
  * @param DOMNode $node
+ *
  * @return type
  */
 function get_dom_node_xpath_fragment(DOMNode $node) {
@@ -50,6 +52,7 @@ function get_dom_node_xpath_fragment(DOMNode $node) {
  *
  * @param DOMNode $parent
  * @param DOMNode $child
+ *
  * @return int
  */
 function get_dom_node_xpath_index(DOMNode $parent, DOMNode $child) {
@@ -72,6 +75,7 @@ function get_dom_node_xpath_index(DOMNode $parent, DOMNode $child) {
  * Converts a DOMNodeList to an array.
  *
  * @param DOMNodeList $list
+ *
  * @return array
  */
 function dom_node_list_to_array(DOMNodeList $list) {
@@ -104,7 +108,8 @@ function format_dom_document(DOMDocument $document) {
 function dom_document_pretty_print_include_files() {
   $path = drupal_get_path('module', 'php_lib');
   drupal_add_js("$path/js/pretty-print/prettify.js");
-  drupal_add_css("$path/js/pretty-print/prettify.css"); // @todo move pretty print to a its own module or a lib folder.
+  drupal_add_css("$path/js/pretty-print/prettify.css");
+  // @todo move pretty print to a its own module or a lib folder.
 }
 
 /**
@@ -147,9 +152,9 @@ function dom_node_children(DOMNode $node, $type = NULL) {
 /**
  *
  * @param DOMNode $node
- * @param type $type
- * @param type $property
- * @param type $value
+ * @param string or int or object... $type
+ * @param string or int or object... $property
+ * @param string or int or object... $value
  */
 function dom_node_filter_children(DOMNode $node, $type, $property, $value) {
   $output = array();
@@ -166,9 +171,10 @@ function dom_node_filter_children(DOMNode $node, $type, $property, $value) {
  * Finds unquie child on params.
  *
  * @param DOMNode $node
- * @param type $type
- * @param type $property
- * @param type $value
+ * @param string or int or object... $type
+ * @param string or int or object... $property
+ * @param string or int or object... $value
+ *
  * @return type
  */
 function dom_node_find_child(DOMNode $node, $type, $property, $value) {
@@ -189,7 +195,8 @@ function dom_node_find_child(DOMNode $node, $type, $property, $value) {
  */
 function dom_element_for_each_child(DOMElement $element, $child_type, $user_func /* Variable Arguments */) {
   $user_func_args = func_get_args();
-  array_splice($user_args, 2); // Remove the $element and $user_func.
+  array_splice($user_args, 2);
+  // Remove the $element and $user_func.
   $children = dom_element_children($element, $child_type);
   foreach ($children as $child) {
     $args = array_merge(array($child), $user_func_args);
@@ -212,4 +219,4 @@ function dom_element_has_child_elements(DOMNode $node) {
   $result = $xpath->query('child::*', $node);
   return $result->length > 0;
 }
-
+// @codingStandardsIgnoreEnd

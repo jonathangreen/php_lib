@@ -1,4 +1,4 @@
-# PHP Lib
+# PHP Lib [![Build Status](https://travis-ci.org/Islandora/php_lib.png?branch=7.x)](https://travis-ci.org/Islandora/php_lib)
 
 ## Introduction
 
@@ -27,7 +27,7 @@ Having problems or solved a problem? Check out the Islandora google groups for a
 
 Current maintainers:
 
-* [Nigel Banks](https://github.com/nigelgbanks)
+* [Diego Pino](https://github.com/diegopino)
 
 ## Development
 

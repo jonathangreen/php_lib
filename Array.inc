@@ -1,8 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  */
 
 /**
@@ -17,7 +16,9 @@ function array_copy_recursive(array &$array) {
     if (is_object($value)) {
       $output[$key] = clone $value;
     }
-    else { // Default type copyed by default.
+    else {
+
+      // Default type copyed by default.
       $output[$key] = $value;
     }
   }
@@ -27,8 +28,8 @@ function array_copy_recursive(array &$array) {
 /**
  *
  * @param array $array
- * @param type $key
- * @param type $value
+ * @param string or int or object... $key
+ * @param string or int or object... $value
  */
 function array_add(array &$array, $key, $value) {
   if (isset($key)) {
@@ -45,6 +46,7 @@ function array_add(array &$array, $key, $value) {
  *
  * @param array $form
  * @param array $indices
+ *
  * @return mixed
  *   A reference to the value at the final index if found, FALSE otherwise.
  */
@@ -85,7 +87,7 @@ function is_non_empty_array($array) {
 
 /**
  *
- * @param type $object
+ * @param string or int or object... $object
  * @return type
  */
 function object_as_array($object) {
@@ -110,3 +112,4 @@ function array_peek(array $array) {
   reset($array);
   return array($key, $value);
 }
+// @codingStandardsIgnoreEnd

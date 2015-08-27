@@ -1,9 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
- *
  * Functions for determining call order and such...
  */
 
@@ -45,10 +43,10 @@ function get_call_stack_index($index = NULL) {
  *
  * @param string $property
  *   A call stack property. Expected to be one of the following.
- *      function	-> The current function name.
- *      line ->	The current line number.
+ *      function    -> The current function name.
+ *      line ->    The current line number.
  *      file -> The current file name.
- *      class	-> The current class name.
+ *      class    -> The current class name.
  *      object -> The current object.
  *      type -> The current call type.
  *      args -> The arguments to the current function.
@@ -154,3 +152,4 @@ function get_caller_args($index = NULL) {
   $index = _ignore_this_in_call_stack($index);
   return get_caller_property($index, 'args');
 }
+// @codingStandardsIgnoreEnd

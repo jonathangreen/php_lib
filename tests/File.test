@@ -1,8 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  * Unit Tests.
  */
 
@@ -59,3 +58,4 @@ class PHPLib_File_TestCase extends DrupalUnitTestCase {
   }
 
 }
+// @codingStandardsIgnoreEnd

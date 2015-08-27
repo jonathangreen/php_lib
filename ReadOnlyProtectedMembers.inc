@@ -1,8 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  */
 module_load_include('inc', 'php_lib', 'Backtrace');
 module_load_include('inc', 'php_lib', 'Array');
@@ -52,8 +51,10 @@ class ReadOnlyProtectedMembers {
    * Clone this object, deeply.
    */
   public function __clone() {
-    $this->members = $this->members; // Copy the array
-    $this->values = $this->values; // References stored in values are shallow copied.
+    $this->members = $this->members;
+    // Copy the array.
+    $this->values = $this->values;
+    // References stored in values are shallow copied.
   }
 
   /**
@@ -92,7 +93,7 @@ class ReadOnlyProtectedMembers {
   }
 
   /**
-   * Removes a member
+   * Removes a member.
    *
    * @param string $name
    */
@@ -132,3 +133,4 @@ class ReadOnlyProtectedMembers {
   }
 
 }
+// @codingStandardsIgnoreEnd

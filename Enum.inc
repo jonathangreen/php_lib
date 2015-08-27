@@ -1,11 +1,10 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  * A class to model Enumerated types. This is modeled after SplEnum which is only availible via PECL
  * PECL Restriction: http://de2.php.net/manual/en/spl-types.installation.php
- * SplEnum Class: http://de2.php.net/manual/en/class.splenum.php
+ * SplEnum Class: http://de2.php.net/manual/en/class.splenum.php.
  *
  * Instead of forcing users to have PECL extensions installed I'm rewriting the class here.
  */
@@ -31,7 +30,7 @@ abstract class Enum {
    * Create an Enumerated instance.
    *
    * @throws InvalidArgumentException
-   * @param type $value
+   * @param string or int or object... $value
    */
   public function __construct($value = NULL) {
     $this->protected = new ReadOnlyProtectedMembers(array('val' => NULL));
@@ -59,7 +58,7 @@ abstract class Enum {
   /**
    * Gets the list of the defined constants.
    *
-   * @param boolean $include_default
+   * @param bool $include_defaultInclude __default in the output?
    *   Include __default in the output?
    *
    * @return array
@@ -107,9 +106,9 @@ abstract class Enum {
 }
 
 /**
- * enum() - a function for generating type safe, iterable, singleton enumerations.
+ * Enum() - a function for generating type safe, iterable, singleton enumerations.
  *
- * enum() will create count($args) + 2 classes in the global namespace. It creates
+ * Enum() will create count($args) + 2 classes in the global namespace. It creates
  * an abstract base class with the name $base_class. This class is given static
  * methods with the names of each of the enum values.
  *
@@ -181,15 +180,19 @@ abstract class Enum {
  *     }
  *
  * @author Jonathan Hohle, http://hohle.net
+ *
  * @since 5.June.2008
+ *
  * @license MIT License
  *
  * @author Nigel Banks, http://nigelbanks.ca
+ *
  * @since 12.10.2011
  *  Changed the function so that type values get 'namespaced' to prevent polution of the global namespace.
  *
  * @param $base_class enumeration name
  * @param $args array of enum values
+ *
  * @return nothing
  */
 function enum($base_class, array $args) {
@@ -199,7 +202,8 @@ function enum($base_class, array $args) {
   $type_classes = array();
 
   foreach ($args as $k => $enum) {
-    $type_class = $base_class . '_' . $enum; // Prevent Collisions
+    $type_class = $base_class . '_' . $enum;
+    // Prevent Collisions.
     $type_classes[] = $type_class;
     $static_method = 'public static function ' . $enum . '() { return ' . $type_class . '::instance(); }';
     $enums[$static_method] = '
@@ -252,3 +256,4 @@ function enum($base_class, array $args) {
   eval($iterator_declaration);
   eval(implode(PHP_EOL, $enums));
 }
+// @codingStandardsIgnoreEnd

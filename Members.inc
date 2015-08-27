@@ -1,8 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  */
 module_load_include('inc', 'php_lib', 'Backtrace');
 module_load_include('inc', 'php_lib', 'Array');
@@ -25,7 +24,7 @@ class Members {
    */
   protected $depth;
   /**
-   * A string of members
+   * A string of members.
    *
    * @var array
    */
@@ -92,7 +91,7 @@ class Members {
   }
 
   /**
-   * Adds several members to this class
+   * Adds several members to this class.
    *
    * @param array members
    *   A map of values where the key are the member's names.
@@ -119,6 +118,7 @@ class Members {
    * Return NULL if the member doesn't exist or isn't set.
    *
    * @param string $name
+   *
    * @return mixed
    */
   public function __get($name) {
@@ -146,6 +146,7 @@ class Members {
    * Checks to see if a member exists and isn't NULL.
    *
    * @param string $name
+   *
    * @return boolean
    */
   public function __isset($name) {
@@ -162,3 +163,4 @@ class Members {
   }
 
 }
+// @codingStandardsIgnoreEnd

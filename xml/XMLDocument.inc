@@ -1,8 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  * Tempory dump for classes and functions.
  */
 module_load_include('inc', 'islandora_metadata', 'Enum');
@@ -53,8 +52,10 @@ class XMLDocumentValidator {
     switch ($this->type) {
       case XMLSchemaFormat::DTD():
         return $document->validate();
+
       case XMLSchemaFormat::XSD():
         return $document->schemaValidate($this->filename);
+
       case XMLSchemaFormat::RNG():
         return $document->relaxNGValidate($this->filename);
     }
@@ -67,7 +68,7 @@ class XMLDocumentValidator {
  */
 class XMLDocumentNamepaces {
   /**
-   * Constants
+   * Constants.
    */
   const xmlns = 'http://www.w3.org/2000/xmlns/';
 
@@ -249,3 +250,4 @@ class _XMLDocument extends DOMDocument {
   }
 
 }
+// @codingStandardsIgnoreEnd

@@ -1,8 +1,7 @@
 <?php
-
+// @codingStandardsIgnoreStart
 /**
  * @file
- *
  */
 module_load_include('inc', 'php_lib', 'Array');
 
@@ -31,7 +30,9 @@ function propagate_form_element_property(array &$element, $property) {
   $element[$property] = get_form_element_property($element, $property);
   foreach (element_children($element) as $key) {
     $child = &$element[$key];
-    if (!isset($child[$property])) { // Don't squash an existing property value.
+    if (!isset($child[$property])) {
+
+      // Don't squash an existing property value.
       $child[$property] = $element[$property];
     }
     propagate_form_element_property($child, $property);
@@ -43,6 +44,7 @@ function propagate_form_element_property(array &$element, $property) {
  *
  * @param array $element
  * @param string $property
+ *
  * @return mixed
  */
 function get_form_element_property(array &$element, $property) {
@@ -68,3 +70,4 @@ function get_element_children(array &$element, $type) {
   }
   return $children;
 }
+// @codingStandardsIgnoreEnd
