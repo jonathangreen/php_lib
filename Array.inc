@@ -54,7 +54,8 @@ function &array_traverse_path(array &$array, array $indices) {
   $point = &$array;
   foreach ($indices as $index) {
     if (empty($point[$index])) {
-      return FALSE;
+      $result = FALSE;
+      return $result;
     }
     $point = &$point[$index];
   }
